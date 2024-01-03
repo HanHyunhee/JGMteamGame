@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf8"
+    pageEncoding="utf8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -115,18 +115,17 @@
         text-align: center;
    
         width: 100%;
-        border: solid 1px;
+       
     
       }
       #maindiv{
         width: 100%;
-        border: solid 1px;
+        
          
       }
       .card{
         position: relative;
         width: 25%;
-        border: solid 1px;
         margin-left: 6%;
         margin-top: 20px;
         display: inline-block;
@@ -149,6 +148,10 @@
       }
       .card-text{
         width: 100%;
+      }
+      #pagebtn{
+      	margin-top:20px;
+      	text-align: center;
       }
       footer{
         margin-top: 80px;
@@ -194,44 +197,26 @@
             <button class="btn" style="font-weight: bolder;">부산광역시</button>
             <button class="btn" style="font-weight: bolder; font-size: 15px;">제주도</button>
           </div>
+          
           <div id="maindiv">
+          <c:forEach items="${glist }" var="gallery">
             <div class="card" >
-              <img src="./img/busan.jpg" class="card-img-top" alt="...">
-              <p class="card-text" style="font-size: 21px; font-weight: bolder;">제목 :아아</p>
-              <p class="card-text"  style="font-size: 16px; font-weight: bolder;">지역 : 서울특별시</p>
-              <p class="card-text"  style="font-size: 15px; font-weight: bolder;">작성자 :홍길동</p>
-              <p class="card-text"  style="font-size: 14px; font-weight: bolder;">조회순 : 0</p>
+              <img src="<%=request.getContextPath() %>/resources/img/busan.jpg" class="card-img-top" alt="...">
+              <p class="card-text" style="font-size: 13px; font-weight: bolder;">${gallery.gallery_num }</p>
+              <p class="card-text" style="font-size: 21px; font-weight: bolder;">제목 :${gallery.gallery_title }</p>
+              <p class="card-text"  style="font-size: 16px; font-weight: bolder;">지역 : ${gallery.gallery_region}</p>
+              <p class="card-text"  style="font-size: 15px; font-weight: bolder;">작성자 :${gallery.userid}</p>
+              <p class="card-text"  style="font-size: 14px; font-weight: bolder;">조회순 : ${gallery.gallery_cnt}</p>
             </div>
-            <div class="card" >
-              <img src="./img/busan.jpg" class="card-img-top" alt="...">
-              <p class="card-text" style="font-size: 21px; font-weight: bolder;">제목 :아아</p>
-              <p class="card-text"  style="font-size: 16px; font-weight: bolder;">지역 : 서울특별시</p>
-              <p class="card-text"  style="font-size: 15px; font-weight: bolder;">작성자 :홍길동</p>
-              <p class="card-text"  style="font-size: 14px; font-weight: bolder;">조회순 : 0</p>
-            </div>
-            <div class="card" >
-              <img src="./img/busan.jpg" class="card-img-top" alt="...">
-              <p class="card-text" style="font-size: 21px; font-weight: bolder;">제목 :아아</p>
-              <p class="card-text"  style="font-size: 16px; font-weight: bolder;">지역 : 서울특별시</p>
-              <p class="card-text"  style="font-size: 15px; font-weight: bolder;">작성자 :홍길동</p>
-              <p class="card-text"  style="font-size: 14px; font-weight: bolder;">조회순 : 0</p>
-            </div>
-            <div class="card" >
-              <img src="./img/busan.jpg" class="card-img-top" alt="...">
-              <p class="card-text" style="font-size: 21px; font-weight: bolder;">제목 :아아</p>
-              <p class="card-text"  style="font-size: 16px; font-weight: bolder;">지역 : 서울특별시</p>
-              <p class="card-text"  style="font-size: 15px; font-weight: bolder;">작성자 :홍길동</p>
-              <p class="card-text"  style="font-size: 14px; font-weight: bolder;">조회순 : 0</p>
-            </div>
-            <div class="card">
-              <img src="./img/seuol.jpg" class="card-img-top" alt="...">
-              <p class="card-text" style="font-size: 21px; font-weight: bolder;">제목 :아아</p>
-              <p class="card-text"  style="font-size: 16px; font-weight: bolder;">지역 : 서울특별시</p>
-              <p class="card-text"  style="font-size: 15px; font-weight: bolder;">작성자 :홍길동</p>
-              <p class="card-text"  style="font-size: 14px; font-weight: bolder;">조회순 : 0</p>
-            </div>
+            </c:forEach>
+           
             <div id="wdiv">
-              <a href="./write.html"><button id="wbtn">글쓰기</button></a>
+              <a href="gwrite"><button id="wbtn">글쓰기</button></a>
+            </div>
+             <div id="pagebtn">
+            <c:forEach var="pagenum" begin="${page.startPage }" end="${page.endPage }">
+            <a href="gallery?page=${pagenum }"><button>${pagenum }</button></a>
+            </c:forEach>
             </div>
           </div>
         </div>

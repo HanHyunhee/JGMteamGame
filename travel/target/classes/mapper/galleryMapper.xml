@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.res.dao.IF_galleryDAO">
+	<insert id="insertOne" parameterType="com.res.vo.GalleryVO">
+	insert into gallery values(gallery_seq.nextval,#{userid},#{gallery_title},#{gallery_text},#{gallery_region},default,default,default)
+	</insert>
+	<insert id="saveFile">
+	insert into files values((select max(gallery_num) from gallery),#{filename})
+	</insert>
+	<select id="selectAll" resultType="com.res.vo.GalleryVO" parameterType="com.res.vo.PageVO">
+		select first.*from(select sencond.*,rownum as rnum from 
+		(select *from gallery order by gallery_date desc,gallery_num desc)sencond)
+		first where rnum between #{startNo} and #{endNo}
+	</select>
+	<select id="selectCnt" resultType="int">
+		select count(*) from gallery
+	</select>
+</mapper>

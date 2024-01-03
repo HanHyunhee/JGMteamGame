@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf8"
+    pageEncoding="utf8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -66,7 +66,7 @@
         #text{
             width: 100%;
         }
-        .file{
+        #file{
             
             margin-top: 20px;
             margin-left: 85px;
@@ -101,17 +101,18 @@
         </div>
     </header>
    <article>
+   <form action="galleryview" method="post" encType="multipart/form-data" >
     <section class="form">
        <div class="write">
         <span class="writep">제목</span>
-        <input type="text" name="" class="titletext" placeholder="제목을 입력해주세요">
+        <input type="text" name="gallery_title" class="titletext" placeholder="제목을 입력해주세요">
        </div>
        <div class="writename">
         <span class="writep">작성자</span>
-        <input type="text" name="" class="username" style="width: 200px;">
+        <input type="text" name="userid" class="username" style="width: 200px;">
        </div>
        <div class="writename">
-        <select name="" id="">
+        <select name="gallery_region" >
             <option value="">지역</option>
             <option value="서울특별시">서울특별시</option>
             <option value="인천광역시">인천광역시</option>
@@ -124,26 +125,26 @@
         </select>
        </div>
        <div class="maintext">
-        <textarea name="" id="text" cols="30" rows="10" placeholder="내용"></textarea>
+        <textarea name="gallery_text" id="text" cols="30" rows="10" placeholder="내용"></textarea>
        </div>
-       <div class="file">
+       <div id="file">
         <input type="button" value="파일첨부" id="save" onclick="fileadd()">
-        
        </div>
        <div class="savebtn">
-            <input type="button" value="저장하기" id="save">
+            <input type="submit" value="저장하기" id="save">
        </div>
-        
     </section>
+    </form>
    </article>
 </body>
-</html>
 <script>
     function fileadd(){
         let newInput = document.createElement('input');   
         newInput.type='file';
         newInput.className='files';
-        let newfile=document.querySelector('.file');
-        newfile.append(newInput);
+        newInput.name='file';
+        let newfile=document.querySelector('#file');
+        newfile.appendChild(newInput);
     }
 </script>
+</html>

@@ -195,7 +195,7 @@
           <a class="navbar-brand" href="./destination.html">주변볼거리</a>
           <a class="navbar-brand" href="./dinboard.html">여행지게시판</a>
           <a class="navbar-brand" href="./accboard.html">숙소게시판</a>
-          <a class="navbar-brand" href="./gallery.html">갤러리</a>
+          <a class="navbar-brand" href="gallery">갤러리</a>
         </div>
       </nav>
       <article>
@@ -206,7 +206,7 @@
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="./img/pension.jpg" class="d-block w-100" alt="..." height="400px" >
+                    <img src="<%=request.getContextPath() %>/resources/img/경주.jpg" class="d-block w-100" alt="..." height="400px" >
                     
                   </div>
                   <div class="carousel-caption d-none d-md-block">
@@ -214,14 +214,14 @@
                     <button type="button" class="btn btn-light">예약하기</button>
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/pension1.jpg" class="d-block w-100" alt="..." height="400px" >
+                    <img src="<%=request.getContextPath() %>/resources/img/서울.jpg" class="d-block w-100" alt="..." height="400px" >
                   </div>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
                     <button type="button" class="btn btn-light">예약하기</button>
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/pension2.jpg" class="d-block w-100" alt="..." height="400px">
+                    <img src="<%=request.getContextPath() %>/resources/img/busan.jpg" class="d-block w-100" alt="..." height="400px">
                   </div>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
@@ -245,21 +245,21 @@
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="./img/img2.jpg" class="d-block w-100 " alt="..." height="400px">
+                    <img src="<%=request.getContextPath() %>/resources/img/img2.jpg" class="d-block w-100 " alt="..." height="400px">
                   </div>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
                     <button type="button" class="btn btn-light">주변정보 보기</button>
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/Island.jpg" class="d-block w-100" alt="..." height="400px">
+                    <img src="<%=request.getContextPath() %>/resources/img/Island.jpg" class="d-block w-100" alt="..." height="400px">
                   </div>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
                     <button type="button" class="btn btn-light">주변정보 보기</button>
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/경주.jpg" class="d-block w-100" alt="..." height="400px">
+                    <img src="<%=request.getContextPath() %>/resources/img/deagu.jpg" class="d-block w-100" alt="..." height="400px">
                   </div>
                   <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
@@ -281,23 +281,23 @@
               <p class="sub">인기 여행지</p>
           </div>
           <div class="travel">
-            <img src="./img/seuol.jpg" alt="" class="travelimg">
+            <img src="<%=request.getContextPath() %>/resources/img/seuol.jpg" alt="" class="travelimg">
             <p class="travelhot">서울</p>
           </div> 
           <div class="travel">
-            <img src="./img/deajeon.jpg" alt="" class="travelimg">
+            <img src="<%=request.getContextPath() %>/resources/img/deajeon.jpg" alt="" class="travelimg">
             <p class="travelhot">대전</p>
           </div>
           <div class="travel">
-            <img src="./img/busan.jpg" alt="" class="travelimg">
+            <img src="<%=request.getContextPath() %>/resources/img/busan.jpg" alt="" class="travelimg">
             <p class="travelhot">부산</p>
           </div>  
           <div class="travel">
-            <img src="./img/deagu.jpg" alt="" class="travelimg">
+            <img src="<%=request.getContextPath() %>/resources/img/deagu.jpg" alt="" class="travelimg">
             <p class="travelhot">대구</p>
           </div>  
           <div class="travel">
-            <img src="./img/injeun.jpg" alt="" class="travelimg">
+            <img src="<%=request.getContextPath() %>/resources/img/injeun.jpg" alt="" class="travelimg">
             <p class="travelhot">인천</p>
           </div>  
       </section>
