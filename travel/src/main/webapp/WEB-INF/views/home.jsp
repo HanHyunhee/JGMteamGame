@@ -98,8 +98,7 @@
         border-radius: 25px;
       }
       .navbar-brand{
-        
-        margin-left: 15.5%;
+        margin-left: 8.5%;
       }
       .navbar-brand:hover{
         border-bottom: solid 3px;
@@ -150,11 +149,11 @@
       display: inline-block;
       text-align: center;
       border: solid 1px; */
-      width: 19%; /* 원하는 가로 길이에 맞게 조정 */
-    padding-bottom: 19%; /* 가로 길이와 동일한 비율의 세로 길이 설정 */
+      width: 16%; /* 원하는 가로 길이에 맞게 조정 */
+    padding-bottom: 16%; /* 가로 길이와 동일한 비율의 세로 길이 설정 */
     position: relative;
     display: inline-block;
- 
+      margin-left: 3%;
     }
    
     .travelimg{
@@ -194,6 +193,8 @@
           <a class="navbar-brand" href="./introduce.html">소개</a>
           <a class="navbar-brand" href="./accdation.html">숙박시설</a>
           <a class="navbar-brand" href="./destination.html">주변볼거리</a>
+          <a class="navbar-brand" href="./dinboard.html">여행지게시판</a>
+          <a class="navbar-brand" href="./accboard.html">숙소게시판</a>
           <a class="navbar-brand" href="./gallery.html">갤러리</a>
         </div>
       </nav>
